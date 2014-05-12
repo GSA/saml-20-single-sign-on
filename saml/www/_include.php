@@ -22,7 +22,7 @@ if (get_magic_quotes_runtime()) {
 }
 
 define('WP_USE_THEMES', false);
-require('../../../../../wp-blog-header.php');
+require('../../../../../wp/wp-blog-header.php');
 
 // WPEngine really messes up port detection
 //$_SERVER['SERVER_PORT'] = 443;

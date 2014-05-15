@@ -76,7 +76,7 @@ class SAML_Client
    */
   public function logout()
   { 
-    $this->saml->logout( get_option('siteurl') );
+    $this->saml->logout( get_option('home') );
   }
 
   /**

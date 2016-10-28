@@ -156,6 +156,7 @@ class SimpleSAML_Utilities {
 		if (isset($_SERVER['PATH_INFO'])) {
 			$selfURLhost .= $_SERVER['PATH_INFO'];
 		}
+        $selfURLhost = str_replace('/sp/saml2-acs.php/1/saml/sp/saml2-acs.php/1','/sp/saml2-acs.php/1',$selfURLhost);
 		return $selfURLhost;
 	
 	}

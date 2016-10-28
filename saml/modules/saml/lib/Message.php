@@ -578,6 +578,7 @@ class sspmod_saml_Message {
 		$validAudiences = $assertion->getValidAudiences();
 		if ($validAudiences !== NULL) {
 			$spEntityId = $spMetadata->getString('entityid');
+            $spEntityId = str_replace('/app/plugins/saml-20-single-sign-on/saml/www/module.php/saml/sp/metadata.php/1','', $spEntityId);
 			if (!in_array($spEntityId, $validAudiences, TRUE)) {
 				$candidates = '[' . implode('], [', $validAudiences) . ']';
 				throw new SimpleSAML_Error_Exception('This SP [' . $spEntityId . ']  is not a valid audience for the assertion. Candidates were: ' . $candidates);

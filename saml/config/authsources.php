@@ -24,7 +24,7 @@ $config = array(
 		// The entity ID of this SP.
 		// Can be NULL/unset, in which case an entity ID is generated based on the metadata URL.
 		'entityID' => NULL,
-		'sign.authnrequest' => TRUE,
+		'sign.authnrequest' => FALSE,
 		'sign.logout' => TRUE,
 		'redirect.sign' => TRUE,
 		// The entity ID of the IdP this should SP should contact.

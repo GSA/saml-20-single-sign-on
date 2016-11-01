@@ -48,7 +48,12 @@ class SAML_Client
     else
     {
       $redirect_url = (array_key_exists('redirect_to', $_GET)) ? wp_login_url( $_GET['redirect_to']) : get_admin_url();
-      $this->saml->requireAuth( array('ReturnTo' => $redirect_url ) );
+      $this->saml->requireAuth(
+          array(
+              'ReturnTo' => $redirect_url,
+              'saml:AuthnContextClassRef' => 'https://max.gov/icam/2015/10/securityLevels/securePlus2',
+          )
+      );
       $attrs = $this->saml->getAttributes();
       if(array_key_exists($this->settings->get_attribute('username'), $attrs) )
       {

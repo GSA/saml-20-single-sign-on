@@ -5,6 +5,9 @@
  * $Id: config.php 3171 2012-09-25 08:54:06Z jaimepc@gmail.com $
  */
 
+$_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = '443';
+
 $config = array (
 
 	/**
@@ -176,6 +179,15 @@ $config = array (
 	'enable.adfs-idp'		=> false,
 	'enable.wsfed-sp'		=> false,
 	'enable.authmemcookie' => false,
+
+    /*
+     * Kepping sessions in DB
+     */
+    'store.type' => 'sql',
+    'store.sql.dsn' => 'mysql:host='.DB_HOST.';dbname='.DB_NAME,
+    'store.sql.username' => DB_USER,
+    'store.sql.password' => DB_PASSWORD,
+    'store.sql.prefix' => 'SAML',
 
 	/* 
 	 * This value is the duration of the session in seconds. Make sure that the time duration of

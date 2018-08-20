@@ -20,6 +20,7 @@ if (!is_string($_REQUEST['AuthId'])) {
  */
 $options = array(
 	'ReturnTo' => $_REQUEST['ReturnTo'],
+    'saml:AuthnContextClassRef' => 'https://max.gov/icam/2015/10/securityLevels/securePlus2',
 );
 
 /*

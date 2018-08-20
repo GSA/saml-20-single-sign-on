@@ -435,19 +435,19 @@ class SAML2_AuthnRequest extends SAML2_Request {
 			$root->setAttribute('ProtocolBinding', $this->protocolBinding);
 		}
 
-		if (!empty($this->nameIdPolicy)) {
-			$nameIdPolicy = $this->document->createElementNS(SAML2_Const::NS_SAMLP, 'NameIDPolicy');
-			if (array_key_exists('Format', $this->nameIdPolicy)) {
-				$nameIdPolicy->setAttribute('Format', $this->nameIdPolicy['Format']);
-			}
-			if (array_key_exists('SPNameQualifier', $this->nameIdPolicy)) {
-				$nameIdPolicy->setAttribute('SPNameQualifier', $this->nameIdPolicy['SPNameQualifier']);
-			}
-			if (array_key_exists('AllowCreate', $this->nameIdPolicy) && $this->nameIdPolicy['AllowCreate']) {
-				$nameIdPolicy->setAttribute('AllowCreate', 'true');
-			}
-			$root->appendChild($nameIdPolicy);
-		}
+//		if (!empty($this->nameIdPolicy)) {
+//			$nameIdPolicy = $this->document->createElementNS(SAML2_Const::NS_SAMLP, 'NameIDPolicy');
+//			if (array_key_exists('Format', $this->nameIdPolicy)) {
+//				$nameIdPolicy->setAttribute('Format', $this->nameIdPolicy['Format']);
+//			}
+//			if (array_key_exists('SPNameQualifier', $this->nameIdPolicy)) {
+//				$nameIdPolicy->setAttribute('SPNameQualifier', $this->nameIdPolicy['SPNameQualifier']);
+//			}
+//			if (array_key_exists('AllowCreate', $this->nameIdPolicy) && $this->nameIdPolicy['AllowCreate']) {
+//				$nameIdPolicy->setAttribute('AllowCreate', 'true');
+//			}
+//			$root->appendChild($nameIdPolicy);
+//		}
 
 		$rac = $this->requestedAuthnContext;
 		if (!empty($rac) && !empty($rac['AuthnContextClassRef'])) {

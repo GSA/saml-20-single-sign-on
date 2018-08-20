@@ -256,7 +256,7 @@ class sspmod_saml_Auth_Source_SP extends SimpleSAML_Auth_Source {
 		$ar->setId($id);
 
 		SimpleSAML_Logger::debug('Sending SAML 2 AuthnRequest to ' . var_export($idpMetadata->getString('entityid'), TRUE));
-		$b = new SAML2_HTTPRedirect();
+		$b = new SAML2_HTTPPost();
 		$this->sendSAML2AuthnRequest($state, $b, $ar);
 
 		assert('FALSE');

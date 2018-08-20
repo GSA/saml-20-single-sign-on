@@ -44,7 +44,9 @@ try {
 	}
 
 	/* Check if the user is authorized. We attempt to authenticate the user if not. */
-	$s->requireAuth();
+	$s->requireAuth(array(
+        'saml:AuthnContextClassRef' => 'https://max.gov/icam/2015/10/securityLevels/securePlus2',
+    ));
 
 	/* Generate session id and save it in a cookie. */
 	$sessionID = SimpleSAML_Utilities::generateID();

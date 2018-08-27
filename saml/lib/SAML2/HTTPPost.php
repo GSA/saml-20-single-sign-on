@@ -29,7 +29,7 @@ class SAML2_HTTPPost extends SAML2_Binding {
 
 		SimpleSAML_Utilities::debugMessage($msgStr, 'out');
 
-        $msgStr = str_replace('/app/plugins/saml-20-single-sign-on/saml/www/module.php/saml/sp/metadata.php/1','',$msgStr);
+        // $msgStr = str_replace('/app/plugins/saml-20-single-sign-on/saml/www/module.php/saml/sp/metadata.php/1','',$msgStr);
 
 		$msgStr = base64_encode($msgStr);
 
